@@ -48,7 +48,7 @@ some_text = _("Привет, мир!")
 ```
 ### Translate texts using in admin page (e.g.: verbose names or help texts)
 
-To translate texts in admin panel, use **ugettext-lazy** or **gettext-lazy**:
+To translate texts in admin panel, use **ugettext_lazy** or **gettext_lazy**:
 ```python
 from django.utils.translation import ugettext_lazy as _
 ...
