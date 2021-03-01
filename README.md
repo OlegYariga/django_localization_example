@@ -9,8 +9,10 @@ and django modeltranslation you will be able to localize all static and dynamic 
 - django >2.0
 - django-modeltranslation >0.13
 
-##Translate static texts
+## Translate static texts
+
 ### Setup languages
+
 In **settings.py** add localization settings:
 ```python
 LANGUAGE_CODE = 'ru'
@@ -30,7 +32,8 @@ LOCALE_PATHS = (
 ```
 and then create **locale** folder in project root.
 
-###Translate texts in project
+### Translate texts in project
+
 To translate static texts in views, use **ugettext** or **gettext** functions. Before request, activate 
 selected language:
 ```python
@@ -44,6 +47,7 @@ activate(language=request.GET.get('language', 'ru'))
 some_text = _("Привет, мир!")
 ```
 ### Translate texts using in admin page (e.g.: verbose names or help texts)
+
 To translate texts in admin panel, use **ugettext-lazy** or **gettext-lazy**:
 ```python
 from django.utils.translation import ugettext_lazy as _
@@ -58,6 +62,7 @@ class SomeModel(models.Model):
 ```
 
 ### Make and compile messages
+
 Run `python manage.py makemessage -l en` (or `django-admin makemessage -l en`) to create gettext file with selected
 language.
 
@@ -83,6 +88,7 @@ msgstr "Hello, world!"
 _After these steps you will get translated text, when you pass get parameter language=en in your view_
 
 ## Translate dynamic texts in admin
+
 1. In your app directory create file named **translation.py**.
 2. Create and register translation:
 ```python
@@ -120,7 +126,7 @@ these fields instead of name, text etc_.
 5. Now you are able to add some instance to a database, including translated fields. After that, when you call
 `BasicModel.objects.first().name`, you will get a result **depending on your language**
    
-##More information here
+## More information here
 
 - https://django-modeltranslation.readthedocs.io/en/latest/installation.html
 - https://phrase.com/blog/posts/quick-guide-django-i18n/
