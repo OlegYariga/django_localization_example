@@ -7,6 +7,8 @@ verify_ssl = true
 
 [packages]
 django = "*"
+django-translations = "*"
+django-modeltranslation = "*"
 
 [requires]
 python_version = "3.7"
